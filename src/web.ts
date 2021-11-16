@@ -1,10 +1,15 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { ScanPlugin } from './definitions';
+import { CameraPluginPermissions, ImageOptions, PermissionStatus, Photo, ScanPlugin } from './definitions';
 
 export class ScanWeb extends WebPlugin implements ScanPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  scan(options: ImageOptions): Promise<Photo> {
+    throw new Error('Method not implemented.');
+  }
+  checkPermissions(): Promise<PermissionStatus> {
+    throw new Error('Method not implemented.');
+  }
+  requestPermissions(permissions?: CameraPluginPermissions): Promise<PermissionStatus> {
+    throw new Error('Method not implemented.');
   }
 }
